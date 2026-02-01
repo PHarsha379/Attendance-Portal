@@ -630,10 +630,10 @@ router.get('/otp/:role', function (req, res, next) {
 });
 router.post('/otp/:role', function (req, res, next) {
   var messages = [];
-  if (!validateEmail(req.body.email)) {
-    messages.push("Email Domain: @somaiya.edu required")
-    res.render('user/otpRegistration', { messages: messages, hasErrors: messages.length > 0 });
-  }
+  //if (!validateEmail(req.body.email)) {
+   // messages.push("Email Domain: @somaiya.edu required")
+   // res.render('user/otpRegistration', { messages: messages, hasErrors: messages.length > 0 });
+//  }
   else {
     userModel.findOne({ 'email': req.body.email }, function (err, user) {
       if (err) {
